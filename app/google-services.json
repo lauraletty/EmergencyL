@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "295460248200",
+    "project_id": "emergencylink-54083",
+    "storage_bucket": "emergencylink-54083.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295460248200:android:99c2e35e1bbd1398815d3d",
+        "android_client_info": {
+          "package_name": "com.example.emergencyl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5Ihd3sCgp5ahMn7y5ll100Drsgz_VQIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
