@@ -29,7 +29,7 @@ import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
 import com.example.wazitoecommerce.data.ProductViewModel
 import com.example.wazitoecommerce.models.Product
-import com.example.wazitoecommerce.ui.theme.WazitoECommerceTheme
+
 
 @Composable
 fun ViewProductsScreen(navController:NavHostController) {
@@ -106,7 +106,6 @@ fun ProductItem(name:String, quantity:String, price:String, id:String,
 @Composable
 @Preview(showBackground = true)
 fun ViewProductsScreenPreview(){
-    WazitoECommerceTheme {
         ViewProductsScreen(navController = rememberNavController())
-    }
+
 }

@@ -1,4 +1,4 @@
-package com.example.wazitoecommerce.ui.theme.screens.FaintF
+package com.example.emergencyl.ui.theme.screens.anklesprain
 
 import android.content.Context
 import android.net.Uri
@@ -35,14 +35,11 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.wazitoecommerce.data.FaintViewModel
-import com.example.wazitoecommerce.data.NosebleedViewModel
-import com.example.wazitoecommerce.data.ProductViewModel
-import com.example.wazitoecommerce.models.nosebleed
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddFaintScreen(navController:NavHostController){
+fun AddAnkleScreen(navController:NavHostController){
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -133,5 +130,5 @@ fun ImagePicker(modifier: Modifier = Modifier, context: Context,navController: N
 @Preview(showBackground = true)
 fun AddProductsScreenPreview(){
 
-    AddFaintScreen(navController = rememberNavController())
+    AddAnkleScreen(navController = rememberNavController())
 }

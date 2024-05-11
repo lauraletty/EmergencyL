@@ -1,4 +1,6 @@
-package com.example.wazitoecommerce.ui.theme.screens.FaintF
+package com.example.emergencyl.ui.theme.screens.nosebleed
+
+
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -30,19 +32,20 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.wazitoecommerce.data.ProductViewModel
 import com.example.wazitoecommerce.models.Product
 
+
 @Composable
-fun ViewFaintsScreen(navController:NavHostController) {
+fun ViewProductsScreen(navController:NavHostController) {
     Column(modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally) {
 
         var context = LocalContext.current
-        var InstructionRepository = ProductViewModel(navController, context)
+        var productRepository = ProductViewModel(navController, context)
 
 
         val emptyProductState = remember { mutableStateOf(Product("","","","","")) }
         var emptyProductsListState = remember { mutableStateListOf<Product>() }
 
-        var products = InstructionRepository.allProducts(emptyProductState, emptyProductsListState)
+        var products = productRepository.allProducts(emptyProductState, emptyProductsListState)
 
 
         Column(
@@ -65,7 +68,7 @@ fun ViewFaintsScreen(navController:NavHostController) {
                         price = it.price,
                         id = it.id,
                         navController = navController,
-                        productRepository = InstructionRepository,
+                        productRepository = productRepository,
                         productImage = it.imageUrl
                     )
                 }
@@ -105,7 +108,6 @@ fun ProductItem(name:String, quantity:String, price:String, id:String,
 @Composable
 @Preview(showBackground = true)
 fun ViewProductsScreenPreview(){
+    ViewProductsScreen(navController = rememberNavController())
 
-        ViewFaintsScreen(navController = rememberNavController())
 }
-

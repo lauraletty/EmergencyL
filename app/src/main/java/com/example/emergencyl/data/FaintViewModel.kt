@@ -7,9 +7,10 @@ import android.widget.Toast
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.navigation.NavHostController
+import com.example.emergencyl.data.AuthViewModel
+import com.example.emergencyl.navigation.LOGIN_URL
 import com.example.wazitoecommerce.models.Product
 import com.example.wazitoecommerce.models.nosebleed
-import com.example.wazitoecommerce.navigation.LOGIN_URL
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -17,7 +18,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 
 class FaintViewModel(var navController:NavHostController, var context: Context) {
-    var authViewModel:AuthViewModel
+    var authViewModel: AuthViewModel
     var progress:ProgressDialog
     init {
         authViewModel = AuthViewModel(navController, context)
@@ -67,9 +68,9 @@ class FaintViewModel(var navController:NavHostController, var context: Context) 
             override fun onDataChange(snapshot: DataSnapshot) {
                 Instructions.clear()
                 for (snap in snapshot.children){
-                    var retrievedInstruction = snap.getValue(Instruction::class.java)
-                    Instruction.value = retrievedInstruction!!
-                    Instructions.add(retrievedInstruction)
+                    var retrievedProduct = snap.getValue(Product::class.java)
+                    Instruction.value = retrievedProduct!!
+                    Instructions.add(retrievedProduct)
                 }
                 progress.dismiss()
             }
